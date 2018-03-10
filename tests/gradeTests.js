@@ -1,5 +1,9 @@
 var book = require ("../lib/grades").book;
 
+exports.setUp = function (callback) {
+    book.reset();
+    callback();
+};
 // a way to add something to the exports object
 // similar to exports.something excepy we can have white space here
 exports["Can add new grade"] = function (test) {
