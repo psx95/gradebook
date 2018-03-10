@@ -30,3 +30,29 @@ exports["Can average negative Grades"] = function (test) {
     test.equal(avg,10);
     test.done();
 }
+
+exports["Can Compute Letter A as Grade"] = function (test) {
+    book.addGrade(90);
+    book.addGrade(100);
+    book.addGrade(95);
+    var grade = book.computeLetterGrade();
+    test.equal (grade,'A');
+    test.done();
+}
+
+exports["Can Compute Letter B as Grade"] = function (test) {
+    book.addGrade(80);
+    book.addGrade(65);
+    book.addGrade(90);
+    var grade = book.computeLetterGrade();
+    test.equal (grade, 'C');
+    test.done ();
+}
+
+exports["Can Compute Fail"] = function (test) {
+    book.addGrade(60);
+    book.addGrade(59);
+    var grade = book.computeLetterGrade();
+    test.equal (grade, 'F');
+    test.done();
+}
